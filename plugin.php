@@ -17,6 +17,8 @@
  * @package WordpressChefsIntegration
  */
 
+use Bcgov\WordpressChefsIntegration\RestController;
+
 $local_composer = __DIR__ . '/vendor/autoload.php';
 if ( file_exists( $local_composer ) ) {
     require_once $local_composer;
@@ -25,7 +27,5 @@ if ( ! class_exists( 'Bcgov\\NaadConnector\\RestController' ) ) {
 	return;
 }
 
-
-use Bcgov\WordpressChefsIntegration\RestController;
 $controller = new RestController();
 $controller->init();
