@@ -1,7 +1,7 @@
 {
-  "name": "{plugin-name}",
+  "name": "wordpress-chefs-integration",
   "version": "1.0.0",
-  "description": "{Plugin Name} Plugin",
+  "description": "WordPress CHEFS Integration Plugin",
   "author": "govwordpress@gov.bc.ca",
   "license": "GPL-2.0-or-later",
   "keywords": [
@@ -11,13 +11,13 @@
     "Plugin",
     "Gutenberg"
   ],
-  "homepage": "{plugin-url}#readme",
+  "homepage": "https://github.com/bcgov/wordpress-chefs-integration#readme",
   "repository": {
     "type": "git",
-    "url": "git+{plugin-url}.git"
+    "url": "git+https://github.com/bcgov/wordpress-chefs-integration.git"
   },
   "bugs": {
-    "url": "{plugin-url}#readme",
+    "url": "https://github.com/bcgov/wordpress-chefs-integration#readme",
     "email": "govwordpress@gov.bc.ca"
   },
   "engines": {

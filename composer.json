@@ -1,6 +1,6 @@
 {
-    "name": "bcgov/wordpress-plugin",
-    "description": "{Plugin Name} Plugin",
+    "name": "bcgov/wordpress-chefs-integration",
+    "description": "Wordpress CHEFS Integration Plugin",
     "type": "wordpress-plugin",
     "license": "Apache-2.0",
     "repositories": [
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-          "Bcgov\\{PluginName}\\": "src/"
+          "Bcgov\\WordpressChefsIntegration\\": "src/"
         }
     },
     "scripts": {
