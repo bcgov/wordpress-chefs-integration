@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-          "Bcgov\\WordpressChefsIntegration\\": "src/"
+          "Bcgov\\WordpressChefsIntegration\\": "src/Bcgov/WordpressChefsIntegration/"
         }
     },
     "scripts": {
