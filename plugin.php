@@ -17,15 +17,25 @@
  * @package WordpressChefsIntegration
  */
 
+use Bcgov\WordpressChefsIntegration\HttpClient;
 use Bcgov\WordpressChefsIntegration\RestController;
 
 $local_composer = __DIR__ . '/vendor/autoload.php';
 if ( file_exists( $local_composer ) ) {
     require_once $local_composer;
 }
-if ( ! class_exists( 'Bcgov\\NaadConnector\\RestController' ) ) {
+if ( ! class_exists( 'Bcgov\\WordpressChefsIntegration\\RestController' ) ) {
 	return;
 }
 
-$controller = new RestController();
-$controller->init();
+$env                  = parse_ini_file( '.env' );
+$producer_http_client = new HttpClient(
+    $env['CHEFS_API_URL'],
+    $env['PRODUCER_FORM_ID'],
+    $env['PRODUCER_FORM_API_KEY'],
+);
+$producer_controller  = new RestController(
+    $producer_http_client,
+    'producer'
+);
+$producer_controller->init();

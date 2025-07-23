@@ -1,6 +1,7 @@
 <?php
 
 use Bcgov\WordpressChefsIntegration\RestController;
+use Bcgov\WordpressChefsIntegration\HttpClient;
 
 /**
  * Unit tests for the RestController class.
@@ -15,11 +16,25 @@ class RestControllerTest extends WP_UnitTestCase {
     private $controller;
 
     /**
-     * Undocumented variable
+     * WordPress REST Server instance.
      *
      * @var WP_REST_Server
      */
     private $rest_server;
+
+    /**
+     * HttpClient.
+     *
+     * @var HttpClient
+     */
+    private $http_client;
+
+    /**
+     * The name of the endpoint used for testing.
+     *
+     * @var string
+     */
+    protected $endpoint = 'test';
 
     /**
      * Sets up unit test suite.
@@ -27,13 +42,14 @@ class RestControllerTest extends WP_UnitTestCase {
      * @return void
      */
     public function set_up(): void {
-        $this->controller = new RestController();
-        $this->controller->init();
         global $wp_rest_server;
-        $wp_rest_server = new WP_REST_Server();
-
+        $wp_rest_server    = new \WP_REST_Server();
         $this->rest_server = $wp_rest_server;
-        do_action( 'rest_api_init', $this->rest_server );
+
+        $this->http_client = $this->createMock( HttpClient::class );
+        $this->controller  = new RestController( $this->http_client, $this->endpoint );
+        $this->controller->init();
+        do_action( 'rest_api_init' );
     }
 
     /**
@@ -42,12 +58,13 @@ class RestControllerTest extends WP_UnitTestCase {
      * @return void
      */
     public function test_register_chefs_routes() {
-        $routes = $this->rest_server->get_routes();
-        $route  = $routes['/chefs/v1/producer'][0];
+        $routes     = $this->rest_server->get_routes();
+        $test_route = '/chefs/v1/' . $this->endpoint;
+        $route      = $routes[ $test_route ][0];
 
-        $this->assertArrayHasKey( '/chefs/v1/producer', $routes );
+        $this->assertArrayHasKey( $test_route, $routes );
         $this->assertEquals( [ 'POST' ], array_keys( $route['methods'] ) );
-        $this->assertEquals( [ $this->controller, 'handle_producer' ], $route['callback'] );
+        $this->assertEquals( [ $this->controller, 'endpoint_callback' ], $route['callback'] );
         $this->assertEquals( [ $this->controller, 'has_permission' ], $route['permission_callback'] );
     }
 }
