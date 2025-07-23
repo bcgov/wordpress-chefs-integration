@@ -64,7 +64,7 @@ class HttpClient {
         array $headers = []
     ) {
         // Set up url and request arguments, merge in any extra headers.
-        $url  = $this->chefs_api_url . '/' . $endpoint;
+        $url  = $this->chefs_api_url . $endpoint;
         $args = [
             'method'  => $method,
             'headers' => [

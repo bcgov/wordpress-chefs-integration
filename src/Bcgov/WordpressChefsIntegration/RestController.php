@@ -73,7 +73,7 @@ class RestController {
      * @return WP_REST_Response|WP_Error
      */
     public function endpoint_callback( $request ) {
-        // $this->http_client->do_request('submission/' . $request->submissionId);
+        // $this->http_client->do_request('submissions/' . $request->submissionId);
         return rest_ensure_response( [ 'message' => 'success' ] );
     }
 
