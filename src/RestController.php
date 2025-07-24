@@ -72,9 +72,31 @@ class RestController {
      * @param WP_REST_Request $request
      * @return WP_REST_Response|WP_Error
      */
-    public function endpoint_callback( $request ) {
-        // $this->http_client->do_request('submissions/' . $request->submissionId);
-        return rest_ensure_response( [ 'message' => 'success' ] );
+    public function endpoint_callback( WP_REST_Request $request ) {
+        $subscription_event = $request->get_param( 'subscriptionEvent' );
+        if ( 'eventSubmission' !== $subscription_event ) {
+            return rest_ensure_response( [ 'message' => 'Not eventSubmission event. Ignoring.' ] );
+        }
+
+        $submission_id = $request->get_param( 'submissionId' );
+        if ( ! $submission_id ) {
+            $response = new WP_REST_Response(
+                [ 'message' => 'Must provide a submissionId parameter.' ],
+                400
+            );
+            return rest_ensure_response( $response );
+        }
+
+        $submission = $this->http_client->get_submission( $submission_id );
+        if ( is_wp_error( $submission ) ) {
+            $response = new WP_REST_Response(
+                [ 'message' => 'Error getting submission: ' . $submission->get_error_message() ],
+                400
+            );
+            return rest_ensure_response( $response );
+        }
+
+        return rest_ensure_response( [ 'message' => 'Success.' ] );
     }
 
     /**
