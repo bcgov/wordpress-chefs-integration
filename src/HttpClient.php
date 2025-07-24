@@ -1,8 +1,6 @@
 <?php
 namespace Bcgov\WordpressChefsIntegration;
 
-use WP_REST_Request;
-use WP_REST_Response;
 use WP_Error;
 
 /**
@@ -49,6 +47,16 @@ class HttpClient {
     }
 
     /**
+     * Get submission details by submission id.
+     *
+     * @param string $submission_id
+     * @return array|WP_Error
+     */
+    public function get_submission( string $submission_id ) {
+        return $this->do_request( 'submission/' . $submission_id );
+    }
+
+    /**
      * Perform a request to the specified endpoint.
      *
      * @param string $endpoint
@@ -57,7 +65,7 @@ class HttpClient {
      * @param array  $headers
      * @return array|WP_Error
      */
-    public function do_request(
+    protected function do_request(
         string $endpoint,
         string $method = 'GET',
         string $body = '',
