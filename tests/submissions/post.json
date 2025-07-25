@@ -1,0 +1,10 @@
+{
+    "data": {
+        "field1": "value1",
+        "field2": 2,
+        "field3": {
+            "term1": true,
+            "term2": false
+        }
+    }
+}

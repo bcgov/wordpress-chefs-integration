@@ -2,6 +2,7 @@
 
 use Bcgov\WordpressChefsIntegration\RestController;
 use Bcgov\WordpressChefsIntegration\HttpClient;
+use Bcgov\WordpressChefsIntegration\PostFactory;
 
 /**
  * Unit tests for the RestController class.
@@ -30,6 +31,13 @@ class RestControllerTest extends WP_UnitTestCase {
     private $http_client;
 
     /**
+     * PostFactory.
+     *
+     * @var PostFactory
+     */
+    protected $factory;
+
+    /**
      * The name of the endpoint used for testing.
      *
      * @var string
@@ -47,7 +55,8 @@ class RestControllerTest extends WP_UnitTestCase {
         $this->rest_server = $wp_rest_server;
 
         $this->http_client = $this->createMock( HttpClient::class );
-        $this->controller  = new RestController( $this->http_client, $this->endpoint );
+        $this->factory     = $this->createMock( PostFactory::class );
+        $this->controller  = new RestController( $this->http_client, $this->factory, $this->endpoint );
         $this->controller->init();
         do_action( 'rest_api_init' );
     }
@@ -79,10 +88,14 @@ class RestControllerTest extends WP_UnitTestCase {
      */
     public function test_post( object $request, $chefs_response, object $expects ) {
         $this->http_client
-            ->expects( $this->exactly( $expects->times ) )
+            ->expects( $this->exactly( $expects->http_client_times ) )
             ->method( 'get_submission' )
             ->with( $request->body->submissionId ?? null )
             ->willReturn( $chefs_response );
+
+        $this->factory
+            ->expects( $this->exactly( $expects->factory_times ) )
+            ->method( 'create_post' );
 
         $response = $this->send_request( $request );
 
@@ -110,8 +123,9 @@ class RestControllerTest extends WP_UnitTestCase {
                     'test' => 'test',
                 ],
                 'expects'        => (object) [
-                    'times'  => 1,
-                    'status' => 200,
+                    'http_client_times' => 1,
+                    'factory_times'     => 1,
+                    'status'            => 200,
                 ],
             ],
             'Wrong subscriptionEvent' => [
@@ -128,8 +142,9 @@ class RestControllerTest extends WP_UnitTestCase {
                     'test' => 'test',
                 ],
                 'expects'        => (object) [
-                    'times'  => 0,
-                    'status' => 200,
+                    'http_client_times' => 0,
+                    'factory_times'     => 0,
+                    'status'            => 200,
                 ],
             ],
             'Missing submissionId'    => [
@@ -145,8 +160,9 @@ class RestControllerTest extends WP_UnitTestCase {
                     'test' => 'test',
                 ],
                 'expects'        => (object) [
-                    'times'  => 0,
-                    'status' => 400,
+                    'http_client_times' => 0,
+                    'factory_times'     => 0,
+                    'status'            => 400,
                 ],
             ],
             'Error from CHEFS API'    => [
@@ -161,8 +177,9 @@ class RestControllerTest extends WP_UnitTestCase {
                 ],
                 'chefs_response' => new WP_Error( 'error' ),
                 'expects'        => (object) [
-                    'times'  => 1,
-                    'status' => 400,
+                    'http_client_times' => 1,
+                    'factory_times'     => 0,
+                    'status'            => 400,
                 ],
             ],
         ];

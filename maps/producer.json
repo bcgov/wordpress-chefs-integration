@@ -1,0 +1,20 @@
+{
+    "businessName": {
+        "name": "bcfd_producer_business_name",
+        "is_title": true
+    },
+    "region": {
+        "name": "product-region",
+        "type": "tax_input"
+    },
+    "fullTime": {
+        "name": "bcfd_producer_full_time"
+    },
+    "ownershipAndOperations": {
+        "name": "producer-operations",
+        "type": "tax_input"
+    },
+    "consent": {
+        "name": "bcfd_producer_consent_terms"
+    }
+}
