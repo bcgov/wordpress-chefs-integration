@@ -11,6 +11,8 @@
     ],
     "require-dev": {
         "bcgov/wordpress-utils": "2.7.0",
+        "bcgov/wordpress-common": "^2.11",
+        "bcgov-theme/bcgov-food-directory": "^2.0",
         "yoast/phpunit-polyfills": "^1.0"
     },
     "autoload": {

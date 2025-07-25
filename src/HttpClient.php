@@ -53,7 +53,15 @@ class HttpClient {
      * @return array|WP_Error
      */
     public function get_submission( string $submission_id ) {
-        return $this->do_request( 'submission/' . $submission_id );
+        $response = $this->do_request( 'submissions/' . $submission_id );
+
+        if ( is_wp_error( $response ) ) {
+            return $response;
+        }
+
+        $response_body = json_decode( $response['body'], true );
+
+        return $response_body['submission']['submission'];
     }
 
     /**

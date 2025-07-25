@@ -1,0 +1,61 @@
+{
+    "data": {
+        "name": "b",
+        "region": "thompson-okanagan",
+        "submit": true,
+        "twitter": "",
+        "website": "http://www.test.com",
+        "cityTown": "c",
+        "facebook": "",
+        "fullTime": 3,
+        "lastName": "b",
+        "linkedIn": "",
+        "province": "britishColumbia",
+        "instagram": "",
+        "lateEntry": false,
+        "postalCode": "c",
+        "phoneNumber": "(111) 111-1111",
+        "businessName": "Test Business",
+        "contactEmail": "b@b.com",
+        "positionTitle": "b",
+        "streetAddress": "c",
+        "contactLastName": "b",
+        "contactFirstName": "b",
+        "contactPhoneNumber": "(222) 222-2222",
+        "businessPhoneNumber": "",
+        "partTimeAndSeasonal": 1,
+        "simpleemailadvanced": "b@b.com",
+        "contactPositionTitle": "b",
+        "commercialFoodService": {
+            "other": false,
+            "distributor": false,
+            "cateringCompany": false,
+            "restaurantsDirect": false,
+            "foodServiceProvider": false,
+            "restaurantsViaDistributor": true
+        },
+        "commercialFoodService1": {
+            "other": false,
+            "distributor": false,
+            "cateringCompany": false,
+            "restaurantsDirect": false,
+            "foodServiceProvider": false,
+            "restaurantsViaDistributor": true
+        },
+        "ownershipAndOperations": [
+            "women-owned-operated",
+            "indigenous-owned-operated",
+            "person-of-colour-owned-operated"
+        ],
+        "briefDescriptionOfYourCompany": "",
+        "businessOrganizationLegalName": "",
+        "estimatedAnnualTotalGrossRevenueRange": "0To30000",
+        "estimatedRevenueComesFromFoodProductSalesWithinBC": 1,
+        "doYouHaveCommercialGeneralLiabilityForYourBusinessAndProducts": {
+            "no": false,
+            "yes": true
+        },
+        "consent": true,
+        "iHaveReadAndAcceptedTheTermsOfUseAndPrivacyPolicyAndConsentToTheMinistryOfAgricultureFoodAndFisheriesContactingMeRegardingFeedBcDirectoryRelatedAdministration": true
+    }
+}

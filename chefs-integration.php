@@ -18,6 +18,7 @@
  */
 
 use Bcgov\WordpressChefsIntegration\HttpClient;
+use Bcgov\WordpressChefsIntegration\PostFactory;
 use Bcgov\WordpressChefsIntegration\RestController;
 
 $local_composer = __DIR__ . '/vendor/autoload.php';
@@ -28,14 +29,29 @@ if ( ! class_exists( 'Bcgov\\WordpressChefsIntegration\\RestController' ) ) {
 	return;
 }
 
-$env                  = parse_ini_file( '.env' );
+// HttpClient uses env variables to set CHEFS form-specific values. See README.
+$env                  = @parse_ini_file( '.env' );
+if (!$env) {
+    return;
+}
 $producer_http_client = new HttpClient(
     $env['CHEFS_API_URL'],
     $env['PRODUCER_FORM_ID'],
     $env['PRODUCER_FORM_API_KEY'],
 );
-$producer_controller  = new RestController(
+
+// PostFactory set to create BCFD producer posts using the producer map.
+$producer_factory = new PostFactory(
+    'producer',
+    json_decode( file_get_contents( __DIR__ . '/maps/producer.json' ), true )
+);
+
+// RestController set to create a /chefs/v1/producer endpoint.
+// CHEFS form should be configured to use this as the subscriber endpoint.
+$producer_controller = new RestController(
     $producer_http_client,
+    $producer_factory,
     'producer'
 );
+
 $producer_controller->init();

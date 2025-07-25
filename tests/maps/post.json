@@ -1,0 +1,12 @@
+{
+    "field1": {
+        "name": "field1"
+    },
+    "field2": {
+        "name": "field2"
+    },
+    "field3": {
+        "name": "taxonomy1",
+        "type": "tax_input"
+    }
+}
