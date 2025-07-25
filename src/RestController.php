@@ -106,7 +106,7 @@ class RestController {
         // Create the WP post from $submission details.
         $post_id = $this->factory->create_post( $submission );
         if ( is_wp_error( $post_id ) ) {
-            return $this->create_error_response( 'Error creating post: ' . $post_id->get_error_message() );
+            return $this->create_error_response( 'Error creating post: ' . $post_id->get_error_message(), 500 );
         }
 
         return rest_ensure_response( [ 'message' => 'Success.' ] );
