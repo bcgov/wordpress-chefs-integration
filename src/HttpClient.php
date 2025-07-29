@@ -65,6 +65,31 @@ class HttpClient {
     }
 
     /**
+     * Get file binary from CHEFS API by file id.
+     * Saves the file to temp/ currently.
+     * TODO: Save the file to WP media library.
+     *
+     * @param string $file_id
+     * @return array|WP_Error
+     */
+    public function get_file( string $file_id ) {
+        $response = $this->do_request( 'files/' . $file_id );
+
+        if ( is_wp_error( $response ) ) {
+            return $response;
+        }
+
+        $file = __DIR__ . "/../temp/$file_id.png";
+
+        $fp = fopen($file, "w");
+        // Response body contains the file binary, write it to the file.
+        fwrite($fp, $response['body']);
+        fclose($fp);
+
+        return $response;
+    }
+
+    /**
      * Perform a request to the specified endpoint.
      *
      * @param string $endpoint

@@ -55,3 +55,8 @@ $producer_controller = new RestController(
 );
 
 $producer_controller->init();
+
+// Uncomment to fetch a file from CHEFS API.
+// TODO: Remove once file fetching is properly implemented.
+// $file_id = '36edc8c0-3e2c-49f1-8ebb-f5d0af1ca55d';
+// error_log(print_r($producer_http_client->get_file($file_id), true));
