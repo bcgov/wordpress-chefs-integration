@@ -30,8 +30,8 @@ if ( ! class_exists( 'Bcgov\\WordpressChefsIntegration\\RestController' ) ) {
 }
 
 // HttpClient uses env variables to set CHEFS form-specific values. See README.
-$env                  = @parse_ini_file( '.env' );
-if (!$env) {
+$env = @parse_ini_file( '.env' );
+if ( ! $env ) {
     return;
 }
 $producer_http_client = new HttpClient(
