@@ -60,7 +60,7 @@ class PostFactoryTest extends WP_UnitTestCase {
         $post_id    = $factory->create_post( $submission );
 
         // Post title.
-        $this->assertEquals('Test Business', get_the_title($post_id));
+        $this->assertEquals( 'Test Business', get_the_title( $post_id ) );
 
         // Metadata.
         $this->assertEquals( 'Test Business', get_post_meta( $post_id, 'bcfd_producer_business_name', true ) );
