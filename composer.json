@@ -9,6 +9,9 @@
             "url": "https://blog.gov.bc.ca/satis"
         }
     ],
+    "require": {
+        "php": "^7.4"
+    },
     "require-dev": {
         "bcgov/wordpress-utils": "2.7.0",
         "bcgov/wordpress-common": "^2.11",
