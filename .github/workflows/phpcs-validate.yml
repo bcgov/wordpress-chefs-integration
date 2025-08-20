@@ -1,5 +1,3 @@
-# Validates PHP code against coding standards using PHPCS
-# Runs on all PHP file changes and can be triggered manually
 name: PHPCS Validation
 permissions:
   contents: read
