@@ -17,12 +17,11 @@
     "url": "git+https://github.com/bcgov/wordpress-chefs-integration.git"
   },
   "bugs": {
-    "url": "https://github.com/bcgov/wordpress-chefs-integration#readme",
+    "url": "https://github.com/bcgov/wordpress-chefs-integration/issues",
     "email": "govwordpress@gov.bc.ca"
   },
   "engines": {
-    "npm": ">= 10.9.2",
-    "node": ">= 22.16.0"
+    "node": "^22.18.0"
   },
   "main": "index.js",
   "devDependencies": {
@@ -30,10 +29,7 @@
     "@bcgov/wordpress-stylelintrc": "git+https://github.com/bcgov/wordpress-stylelintrc.git#semver:1.x",
     "ajv": "^8.17.1",
     "ajv-keywords": "^5.1.0",
-    "@wordpress/scripts": "^30.17.0"
-  },
-  "dependencies": {
-    "npm": "^11.4.1"
+    "@wordpress/scripts": "^30.20.0"
   },
   "scripts": {
     "start": "wp-scripts start",
