@@ -1,9 +1,0 @@
-name: Linting
-
-on:
-  pull_request:
-  workflow_dispatch:
-
-jobs:
-  trigger:
-    uses: bcgov/des-git-workflows/.github/workflows/linting.yml@main

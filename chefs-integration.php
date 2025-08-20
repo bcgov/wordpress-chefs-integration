@@ -21,12 +21,12 @@ use Bcgov\WordpressChefsIntegration\HttpClient;
 use Bcgov\WordpressChefsIntegration\PostFactory;
 use Bcgov\WordpressChefsIntegration\RestController;
 
-$local_composer = __DIR__ . '/vendor/autoload.php';
-if ( file_exists( $local_composer ) ) {
-    require_once $local_composer;
+// Attempt to load Composer autoloader and required class.
+if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+    require_once __DIR__ . '/vendor/autoload.php';
 }
-if ( ! class_exists( 'Bcgov\\WordpressChefsIntegration\\RestController' ) ) {
-	return;
+if ( ! class_exists( 'Bcgov\\WordpressChefsIntegration\\HttpClient' ) ) {
+    return;
 }
 
 // HttpClient uses env variables to set CHEFS form-specific values. See README.

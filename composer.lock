@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "47e1315dd6215a1e58067fe8c3b8f48e",
+    "content-hash": "56ffe1735a2ac67a7bb95538e58dcf5e",
     "packages": [],
     "packages-dev": [
         {
@@ -57,17 +57,17 @@
         },
         {
             "name": "bcgov-theme/bcgov-food-directory",
-            "version": "2.0.1",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://bitbucket.org/bc-gov/bcgov-food-directory.git",
-                "reference": "98764db2234af0583d391c0b0ef7953376a9966e"
+                "reference": "fff1ae7de081168c89cf83fe269b1d6c51a96213"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://blog.gov.bc.ca/satis//dist/bcgov-theme/bcgov-food-directory/bcgov-theme-bcgov-food-directory-98764db2234af0583d391c0b0ef7953376a9966e-zip-c7d364.zip",
-                "reference": "98764db2234af0583d391c0b0ef7953376a9966e",
-                "shasum": "b2266d5a26e5e09138cbfa9036ad0124f17e0d9c"
+                "url": "https://blog.gov.bc.ca/satis//dist/bcgov-theme/bcgov-food-directory/bcgov-theme-bcgov-food-directory-fff1ae7de081168c89cf83fe269b1d6c51a96213-zip-d0b9e0.zip",
+                "reference": "fff1ae7de081168c89cf83fe269b1d6c51a96213",
+                "shasum": "c6e6cdbf48517214e219d34191a782f6972f0cf5"
             },
             "require-dev": {
                 "bcgov/wordpress-common": "^2.11",
@@ -108,9 +108,9 @@
             },
             "homepage": "https://bcfooddirectory.gov.bc.ca",
             "support": {
-                "source": "https://bitbucket.org/bc-gov/bcgov-food-directory/src/98764db2234af0583d391c0b0ef7953376a9966e/?at=2.0.1"
+                "source": "https://bitbucket.org/bc-gov/bcgov-food-directory/src/fff1ae7de081168c89cf83fe269b1d6c51a96213/?at=2.1.0"
             },
-            "time": "2025-01-28T20:36:20+00:00"
+            "time": "2025-08-18T17:23:29+00:00"
         },
         {
             "name": "bcgov/sage-lib",
@@ -242,17 +242,17 @@
         },
         {
             "name": "bcgov/wordpress-utils",
-            "version": "dev-main",
+            "version": "2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bcgov/wordpress-utils.git",
-                "reference": "d5f4731f944f39f8ffb4e6a625db979f8b97732a"
+                "reference": "2d8bef951a59a5c53a1ca8cfee15ad66f7ee227f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://blog.gov.bc.ca/satis//dist/bcgov/wordpress-utils/bcgov-wordpress-utils-d5f4731f944f39f8ffb4e6a625db979f8b97732a-zip-a04ce3.zip",
-                "reference": "d5f4731f944f39f8ffb4e6a625db979f8b97732a",
-                "shasum": "a99eacb805f764f9e0a0824e063b542831fc2eea"
+                "url": "https://blog.gov.bc.ca/satis//dist/bcgov/wordpress-utils/bcgov-wordpress-utils-2d8bef951a59a5c53a1ca8cfee15ad66f7ee227f-zip-1374e6.zip",
+                "reference": "2d8bef951a59a5c53a1ca8cfee15ad66f7ee227f",
+                "shasum": "7bfcdd645a6b0e7cb6657e6b6a97d6cc2981565f"
             },
             "require": {
                 "brain/monkey": "^2.6",
@@ -261,12 +261,11 @@
                 "php": ">=7.4",
                 "phpcompatibility/phpcompatibility-wp": "^2.1",
                 "phpunit/phpunit": "^9.5",
-                "wp-coding-standards/wpcs": "^3.2"
+                "wp-coding-standards/wpcs": "^3.0.1"
             },
             "require-dev": {
                 "phpcsstandards/phpcsutils": "^1.0"
             },
-            "default-branch": true,
             "bin": [
                 "bin/scan-wp-patterns.php"
             ],
@@ -295,10 +294,10 @@
                 ]
             },
             "support": {
-                "source": "https://github.com/bcgov/wordpress-utils/tree/main",
+                "source": "https://github.com/bcgov/wordpress-utils/tree/2.7.0",
                 "issues": "https://github.com/bcgov/wordpress-utils/issues"
             },
-            "time": "2025-08-19T19:28:40+00:00"
+            "time": "2025-06-23T20:25:10+00:00"
         },
         {
             "name": "brain/monkey",
@@ -3401,16 +3400,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.6.24",
+            "version": "9.6.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "ea49afa29aeea25ea7bf9de9fdd7cab163cc0701"
+                "reference": "049c011e01be805202d8eebedef49f769a8ec7b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/ea49afa29aeea25ea7bf9de9fdd7cab163cc0701",
-                "reference": "ea49afa29aeea25ea7bf9de9fdd7cab163cc0701",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/049c011e01be805202d8eebedef49f769a8ec7b7",
+                "reference": "049c011e01be805202d8eebedef49f769a8ec7b7",
                 "shasum": ""
             },
             "require": {
@@ -3484,7 +3483,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.24"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.25"
             },
             "funding": [
                 {
@@ -3508,7 +3507,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-08-10T08:32:42+00:00"
+            "time": "2025-08-20T14:38:31+00:00"
         },
         {
             "name": "psr/clock",
@@ -5334,7 +5333,7 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.32.0",
+            "version": "v1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
@@ -5393,7 +5392,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.32.0"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.33.0"
             },
             "funding": [
                 {
@@ -5405,6 +5404,10 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
@@ -5413,16 +5416,16 @@
         },
         {
             "name": "symfony/polyfill-intl-grapheme",
-            "version": "v1.32.0",
+            "version": "v1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-grapheme.git",
-                "reference": "b9123926e3b7bc2f98c02ad54f6a4b02b91a8abe"
+                "reference": "380872130d3a5dd3ace2f4010d95125fde5d5c70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/b9123926e3b7bc2f98c02ad54f6a4b02b91a8abe",
-                "reference": "b9123926e3b7bc2f98c02ad54f6a4b02b91a8abe",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/380872130d3a5dd3ace2f4010d95125fde5d5c70",
+                "reference": "380872130d3a5dd3ace2f4010d95125fde5d5c70",
                 "shasum": ""
             },
             "require": {
@@ -5471,7 +5474,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.32.0"
+                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.33.0"
             },
             "funding": [
                 {
@@ -5483,15 +5486,19 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-09T11:45:10+00:00"
+            "time": "2025-06-27T09:58:17+00:00"
         },
         {
             "name": "symfony/polyfill-intl-normalizer",
-            "version": "v1.32.0",
+            "version": "v1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-normalizer.git",
@@ -5552,7 +5559,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.32.0"
+                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.33.0"
             },
             "funding": [
                 {
@@ -5564,6 +5571,10 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
@@ -5572,7 +5583,7 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.32.0",
+            "version": "v1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
@@ -5633,7 +5644,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.32.0"
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.33.0"
             },
             "funding": [
                 {
@@ -5645,6 +5656,10 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
@@ -5653,7 +5668,7 @@
         },
         {
             "name": "symfony/polyfill-php73",
-            "version": "v1.32.0",
+            "version": "v1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php73.git",
@@ -5709,7 +5724,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php73/tree/v1.32.0"
+                "source": "https://github.com/symfony/polyfill-php73/tree/v1.33.0"
             },
             "funding": [
                 {
@@ -5721,6 +5736,10 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
@@ -5729,7 +5748,7 @@
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.32.0",
+            "version": "v1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
@@ -5789,7 +5808,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.32.0"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.33.0"
             },
             "funding": [
                 {
@@ -5801,6 +5820,10 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
@@ -5809,7 +5832,7 @@
         },
         {
             "name": "symfony/polyfill-php81",
-            "version": "v1.32.0",
+            "version": "v1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php81.git",
@@ -5865,7 +5888,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php81/tree/v1.32.0"
+                "source": "https://github.com/symfony/polyfill-php81/tree/v1.33.0"
             },
             "funding": [
                 {
@@ -5874,6 +5897,10 @@
                 },
                 {
                     "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nicolas-grekas",
                     "type": "github"
                 },
                 {
@@ -6545,9 +6572,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "bcgov/wordpress-utils": 20
-    },
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {},
