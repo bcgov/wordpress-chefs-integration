@@ -13,4 +13,4 @@ on:
       - "!dist/**"
 jobs:
   phpcs-validation:
-    uses: bcgov/des-git-workflows/.github/workflows/phpcs-validate.yml@main
+    uses: bcgov/des-git-workflows/.github/workflows/phpcs-validate.yml@bug/DESCW-3156_fix-workflow
