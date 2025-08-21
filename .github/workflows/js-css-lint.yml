@@ -1,0 +1,8 @@
+name: Code Quality
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  lint:
+    uses: bcgov/des-git-workflows/.github/workflows/js-css-lint.yml@main
+    with:
+      node_version: '^22.18.0'
