@@ -1,12 +1,12 @@
 {
-    "name": "bcgov/wordpress-chefs-integration",
+    "name": "bcgov-plugin/wordpress-chefs-integration",
     "description": "Wordpress CHEFS Integration Plugin",
     "type": "wordpress-plugin",
     "license": "Apache-2.0",
     "repositories": [
         {
             "type": "composer",
-            "url": "https://blog.gov.bc.ca/satis"
+            "url": "https://blog.gov.bc.ca/satis/"
         }
     ],
     "require-dev": {
