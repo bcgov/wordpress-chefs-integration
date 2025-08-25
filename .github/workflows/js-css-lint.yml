@@ -6,3 +6,5 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   lint:
     uses: bcgov/des-git-workflows/.github/workflows/js-css-lint.yml@1.0.0
+    with:
+      node_version: "^22.18.0"
