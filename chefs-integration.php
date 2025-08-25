@@ -22,8 +22,9 @@ use Bcgov\WordpressChefsIntegration\PostFactory;
 use Bcgov\WordpressChefsIntegration\RestController;
 
 // Attempt to load Composer autoloader and required class.
-if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
-    require_once __DIR__ . '/vendor/autoload.php';
+$local_composer = __DIR__ . '/../../vendor/autoload.php';
+if ( file_exists( $local_composer ) ) {
+    require_once $local_composer;
 }
 if ( ! class_exists( 'Bcgov\\WordpressChefsIntegration\\HttpClient' ) ) {
     return;
