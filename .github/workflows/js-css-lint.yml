@@ -1,4 +1,6 @@
 name: Code Quality
+permissions:
+  contents: read
 on: [push, pull_request, workflow_dispatch]
 permissions:
   contents: read
