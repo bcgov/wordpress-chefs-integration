@@ -2,37 +2,60 @@
 
 ## Getting started
 
-1. Copy sample.env and rename it .env.
-2. Add form id of your producer form as `PRODUCER_FORM_ID`.
-   1. This can be found in the URL when viewing the form in CHEFS.
-3. Add form API key of your producer form as `PRODUCER_FORM_API_KEY`.
-   1. This must be generated in CHEFS for your form under Api key > Generate API Key.
+### Environment Setup
 
-## Map file structure
+1. **Create environment file**: Copy `sample.env` and rename it to `.env`
 
-Currently there is one hardcoded partial mapping file (`maps/producer.json`) for BC Food Directory Producer CPT posts. In the future this map might be provided some other way (plugin options, env file, etc.) so that this plugin can be reused for other sites that need CHEFS integration. The producer map is included for demonstration purposes.
+2. **Configure Producer Form ID**:
+   - Add your producer form ID as `PRODUCER_FORM_ID` in the `.env` file
+   - You can find this ID in the URL when viewing the form in CHEFS
 
-Map files are json objects that map CHEFS field ids to either WordPress metadata keys or WordPress taxonomies. The top level key should be the CHEFS field id (`<chefs field id>` in the example below). Then each child object should have some or all of these properties:
+3. **Set up API Key**:
+   - Add your producer form API key as `PRODUCER_FORM_API_KEY` in the `.env` file
+   - Generate this key in CHEFS: navigate to your form → **Api key** → **Generate API Key**
 
-- `name`: `string`. Either the metadata key or the taxonomy slug the CHEFS field should map to. Required.
-- `type`: `string`. Either `meta_input` or `tax_input` depending on whether it's metadata or a taxonomy. Default: `meta_input`.
-- `is_title`: `boolean`. If set to `true`, the value will be used for the post's `post_title`. This can only be used on meta_input fields. Default: `false`.
+## Map File Structure
 
-Example:
-```JSON
+### Overview
+
+Map files are JSON objects that define how CHEFS form fields map to WordPress data. Currently, there's a hardcoded mapping file at `maps/producer.json` for BC Food Directory Producer CPT posts (included for demonstration purposes).
+
+> **Note**: In future versions, mapping configuration may be provided through plugin options or environment files to improve reusability across different sites.
+
+### Map File Format
+
+Each map file uses **CHEFS field IDs** as top-level keys, with mapping configuration objects as values.
+
+#### Configuration Properties
+
+| Property | Type | Description | Required | Default |
+|----------|------|-------------|----------|---------|
+| `name` | `string` | WordPress metadata key or taxonomy slug | ✅ Yes | - |
+| `type` | `string` | Data type: `meta_input` (metadata) or `tax_input` (taxonomy) | No | `meta_input` |
+| `is_title` | `boolean` | Use this field's value as the post title (metadata only) | No | `false` |
+
+### Example Configuration
+
+```json
 {
-    ...
-
-    <chefs field id>: {
-        "name": "<wordpress meta key>",
-        "type": "meta_input",
-        "is_title": true
-    },
-    <chefs field id>: {
-        "name": "<wordpress taxonomy slug>",
-        "type": "tax_input"
-    }
-
-    ...
+  "field_123_company_name": {
+    "name": "company_name",
+    "type": "meta_input",
+    "is_title": true
+  },
+  "field_456_business_category": {
+    "name": "business_category",
+    "type": "tax_input"
+  },
+  "field_789_description": {
+    "name": "company_description",
+    "type": "meta_input"
+  }
 }
 ```
+
+**Explanation:**
+
+- `field_123_company_name` → WordPress metadata `company_name` + used as post title
+- `field_456_business_category` → WordPress taxonomy `business_category`
+- `field_789_description` → WordPress metadata `company_description`
