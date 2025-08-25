@@ -6,7 +6,7 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "https://blog.gov.bc.ca/satis"
+            "url": "https://blog.gov.bc.ca/satis/"
         }
     ],
     "require": {
