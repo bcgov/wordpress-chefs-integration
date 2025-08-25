@@ -3,6 +3,6 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   lint:
-    uses: bcgov/des-git-workflows/.github/workflows/js-css-lint.yml@bug/DESCW-3156_fix-workflow
+    uses: bcgov/des-git-workflows/.github/workflows/js-css-lint.yml@main
     with:
       node_version: '^22.18.0'
