@@ -5,4 +5,4 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   pattern-validation:
-    uses: bcgov/des-git-workflows/.github/workflows/pattern-validate.yml@main
+    uses: bcgov/des-git-workflows/.github/workflows/pattern-validate.yml@1.0.0
